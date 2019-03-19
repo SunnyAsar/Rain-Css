@@ -1,0 +1,8 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+[class=*"col-"] {
+  padding: 10px;
+}
