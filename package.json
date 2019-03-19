@@ -1,0 +1,28 @@
+{
+  "name": "rain-css",
+  "version": "0.0.1",
+  "description": "This is the base project for rain css",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html -d docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SunnyAsar/Rain-Css.git"
+  },
+  "keywords": [
+    "css",
+    "framwork"
+  ],
+  "author": "Sunny & Henry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SunnyAsar/Rain-Css/issues"
+  },
+  "homepage": "https://github.com/SunnyAsar/Rain-Css#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.2",
+    "sass": "^1.17.3"
+  }
+}
