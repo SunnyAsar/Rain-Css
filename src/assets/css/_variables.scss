@@ -1,6 +1,29 @@
 // Colors
-$main-color: salmon;
-$succes: green;
+$primary: blue;
+$success: green;
+$secondary: teal;
+$warning: orange;
+$danger : crimson;
+$info : skyblue;
+$default : lightgray;
+$dark: black;
+
+
+
+$colors :(
+ primary: $primary,
+ seconday:$secondary,
+ success:  $success,
+ warning: $warning,
+ info:   $info,
+ danger: $danger,
+ default:$default,
+ dark:$dark
+);
+
+
+
+
 
 // Breakpoints
 $sm-breakpoint: 600px;

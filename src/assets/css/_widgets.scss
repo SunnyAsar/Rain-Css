@@ -5,3 +5,26 @@
 }
 
 
+@each $name,$color in $colors {
+    
+    .btn-#{$name}{
+        background-color: $color;
+
+    //   @if $color < #888{
+    //       color: white;
+    //   } @else{
+    //     color: rebeccapurple;
+    //   }
+
+
+
+    // @if ($color == $defult){
+    //     color: black;
+    // }
+
+
+    }
+
+
+
+}
