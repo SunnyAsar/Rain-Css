@@ -1,8 +1,33 @@
 .row {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
-[class=*"col-"] {
-  padding: 10px;
+[class^="col-"],
+[class*=" col-"] {
+  box-sizing: border-box;
+  padding: 10;
+}
+
+@mixin columns ($bp) {
+  @for $i from 1 through 12 {
+    .col-#{$bp}-#{$i} {
+      width: (100% / 12) * $i;
+    }
+  }
+}
+
+@include columns(sm);
+
+@media (min-width: $sm-breakpoint) {
+  @include columns(md);
+}
+
+@media (min-width: $md-breakpoint) {
+  @include columns(lg);
+}
+
+@media (min-width: $lg-breakpoint) {
+  @include columns(xl);
 }
