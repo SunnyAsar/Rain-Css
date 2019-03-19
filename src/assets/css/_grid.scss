@@ -2,7 +2,23 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  background: seashell;
+  box-sizing: border-box;
 }
+
+
+@mixin flex-prop($prop) {
+  @each $value in center, space-around, space-between, flex-end {
+    .#{$prop}-#{$value} {
+      #{$prop}: $value;
+    }
+  }
+}
+
+@include flex-prop(justify-content);
+@include flex-prop(align-items);
+
+
 
 [class^="col-"],
 [class*=" col-"] {
@@ -10,6 +26,8 @@
   padding: 10;
 }
 
+
+//generat the requred classes by screen size
 @mixin columns ($bp) {
   @for $i from 1 through 12 {
     .col-#{$bp}-#{$i} {
@@ -20,6 +38,7 @@
 
 @include columns(sm);
 
+//media queries for the grid
 @media (min-width: $sm-breakpoint) {
   @include columns(md);
 }
