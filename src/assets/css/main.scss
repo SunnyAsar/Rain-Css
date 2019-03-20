@@ -16,8 +16,16 @@
     font-weight: bold;
     margin-top: 30px;
 
+    .logo {
+      font-size: 3rem;
+    }
+
     ul li{
       cursor: pointer;
+    }
+
+    @media (max-width: $sm-breakpoint) {
+      margin-top: 10px;
     }
   }
 
