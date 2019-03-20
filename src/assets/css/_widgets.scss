@@ -1,12 +1,14 @@
 %box {
     padding: 10px 30px;
     margin: auto;
+    box-sizing: border-box;
 }
 
 .box {
     @extend %box;
     width: 920px;
     max-width: 100%;
+    
 }
 
 .full-box {
@@ -30,7 +32,25 @@
         display: inline-block;
         padding: .3em .5em;
         border-radius: 5px;
-        color: $dark;
+        color: $color;
         border: 2px solid $color;
     }
+}
+
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.stick-to-top{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.full-width{
+flex-grow: 1;
+width: 100%;
 }
