@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+}
+
+p {
+  font-size: 1rem;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: 1rem + ((7 - $i) * 0.4);
+  }
+}
+
+@each $name,
+$color in $colors {
+  .text-#{$name} {
+    color: $color !important;
+  }
+}
+
+@each $position in left,
+center,
+right,
+justify {
+  .text-align-#{$position} {
+    text-align: $position !important;
+  }
+}

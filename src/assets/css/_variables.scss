@@ -1,24 +1,26 @@
 // Colors
 $primary: blue;
-$success: green;
 $secondary: teal;
+$success: green;
 $warning: orange;
 $danger : crimson;
 $info : skyblue;
 $default : lightgray;
 $dark: black;
+$light: whitesmoke;
 
 
 
 $colors :(
- primary: $primary,
- seconday:$secondary,
- success:  $success,
- warning: $warning,
- info:   $info,
- danger: $danger,
- default:$default,
- dark:$dark
+  primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  warning: $warning,
+  info: $info,
+  danger: $danger,
+  default: $default,
+  dark: $dark,
+  light: $light
 );
 
 
