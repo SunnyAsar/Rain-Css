@@ -22,6 +22,15 @@
 
     ul li{
       cursor: pointer;
+      padding: 10px;
+      border: 2px solid transparent;
+      transition:all .7s;
+      &:hover{
+        border-radius: 5%;
+        background: rgba($color: #474646, $alpha: .5);
+        border: 2px solid $light;
+        transform: translateY(-5px);
+      }
     }
 
     @media (max-width: $sm-breakpoint) {
