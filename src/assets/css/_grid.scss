@@ -7,6 +7,17 @@
 }
 
 
+
+  @each $value in flex,inline,inline-block,block {
+    .display-#{$value}{
+      display: $value
+    }
+  }
+  
+
+
+
+
 @mixin flex-prop($prop) {
   @each $value in center, space-around, space-between, flex-end {
     .#{$prop}-#{$value} {

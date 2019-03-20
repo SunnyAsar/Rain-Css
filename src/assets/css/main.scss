@@ -23,8 +23,24 @@
 
     h1 {
       color: $light;
-      margin-bottom: 200px;
+      // margin-bottom: 200px;
       font-size: 7rem;
+
+
+      .h3{
+        font-size: 30px;
+        display: block;
+      }
+      .h2{
+        font-size: 50px;
+        display: block;
+      }
+      .h1{
+        font-size: 80px;
+        display: block;
+      }
+      
+
     }
   }
 }
