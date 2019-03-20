@@ -6,16 +6,13 @@
   box-sizing: border-box;
 }
 
-
-
-  @each $value in flex,inline,inline-block,block {
-    .display-#{$value}{
-      display: $value
+@mixin displays ($bp: '') {
+  @each $value in flex, inline, inline-block, block, none {
+    .display#{$bp}-#{$value}{
+      display: $value !important;
     }
   }
-  
-
-
+}
 
 
 @mixin flex-prop($prop) {
@@ -29,35 +26,36 @@
 @include flex-prop(justify-content);
 @include flex-prop(align-items);
 
-
-
 [class^="col-"],
 [class*=" col-"] {
   box-sizing: border-box;
   padding: 10;
 }
 
-
 //generat the requred classes by screen size
-@mixin columns ($bp) {
+@mixin columns ($bp: '') {
   @for $i from 1 through 12 {
-    .col-#{$bp}-#{$i} {
+    .col#{$bp}-#{$i} {
       width: (100% / 12) * $i;
     }
   }
 }
 
-@include columns(sm);
+@include columns();
+@include displays();
 
 //media queries for the grid
 @media (min-width: $sm-breakpoint) {
-  @include columns(md);
+  @include columns(-md);
+  @include displays(-md);
 }
 
 @media (min-width: $md-breakpoint) {
-  @include columns(lg);
+  @include columns(-lg);
+  @include displays(-lg);
 }
 
 @media (min-width: $lg-breakpoint) {
-  @include columns(xl);
+  @include columns(-xl);
+  @include displays(-xl);
 }
