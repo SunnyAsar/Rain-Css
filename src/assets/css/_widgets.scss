@@ -23,3 +23,14 @@
         color: $light;
     }
 }
+
+@each $name, $color in $colors {
+    .btn-#{$name}-outline {
+        background-color: transparent;
+        display: inline-block;
+        padding: .3em .5em;
+        border-radius: 5px;
+        color: $dark;
+        border: 2px solid $color;
+    }
+}
