@@ -10,6 +10,9 @@ p {
   h#{$i} {
     font-size: 1rem + ((7 - $i) * 0.4);
   }
+  .h#{$i} {
+    font-size: 1rem + ((7 - $i) * 0.4);
+  }
 }
 
 @each $name,
