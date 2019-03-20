@@ -26,6 +26,7 @@
     display: flex;
     align-items: center;
     h1 {
+      margin-bottom: 10%;
       font-family: 'Raleway', sans-serif;
       .h3{
         font-size: 30px;
@@ -36,6 +37,14 @@
       .h1{
         font-size: 80px;
       }
+      @media (max-width: $sm-breakpoint) {
+        .h3 { font-size: 20px; }
+        .h2 { font-size: 30px; }
+        .h1 { font-size: 60px; }
+      }
+    }
+    @media (max-width: $sm-breakpoint) {
+      padding: 0;
     }
   }
 }
