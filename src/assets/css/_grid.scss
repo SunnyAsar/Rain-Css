@@ -29,7 +29,7 @@
 [class^="col-"],
 [class*=" col-"] {
   box-sizing: border-box;
-  padding: 10;
+  padding: 10px;
 }
 
 //generat the requred classes by screen size
@@ -37,6 +37,7 @@
   @for $i from 1 through 12 {
     .col#{$bp}-#{$i} {
       width: (100% / 12) * $i;
+      // padding: 20px;
     }
   }
 }

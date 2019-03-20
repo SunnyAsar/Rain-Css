@@ -7,7 +7,7 @@
 
 .hero {
   background-color: rgba($color: #000000, $alpha: .5);
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -76,4 +76,40 @@
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+
+
+.card-container {
+  cursor: pointer;
+  height: 300px;
+  perspective: 600;
+  position: relative;
+  width: 100%;
+}
+.card {
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+  width: 100%;
+}
+.card:hover {
+  transform: rotateY(180deg);
+}
+.card .side {
+  backface-visibility: hidden;
+  border-radius: 6px;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+}
+.card .back {
+  // background: #eaeaed;
+  background: url('https://i.pinimg.com/originals/c7/0a/43/c70a435e537ea495e340302356ed7172.jpg') no-repeat left bottom, rgba($color: #000000, $alpha: .5);;
+  color: $light;
+  line-height: 250px;
+  text-align: center;
+  transform: rotateY(180deg);
 }
