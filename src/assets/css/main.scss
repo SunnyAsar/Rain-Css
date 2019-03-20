@@ -82,7 +82,7 @@
 
 .card-container {
   cursor: pointer;
-  height: 300px;
+  height: 400px;
   perspective: 600;
   position: relative;
   width: 100%;
@@ -93,6 +93,7 @@
   transform-style: preserve-3d;
   transition: all 1s ease-in-out;
   width: 100%;
+  margin-bottom: 30px;
 }
 .card:hover {
   transform: rotateY(180deg);
