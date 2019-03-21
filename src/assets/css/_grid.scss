@@ -15,26 +15,26 @@
 }
 
 @mixin spacing($bp: '', $prop, $shortcut) {
-  @for $i from 1 through 6 {
+  @for $i from 0 through 6 {
     .#{$shortcut}l#{$bp}-#{$i} {
-      #{$prop}-left: 5px * $i;
+      #{$prop}-left: 5px * $i !important;
     }
     .#{$shortcut}r#{$bp}-#{$i} {
-      #{$prop}-right: 5px * $i;
+      #{$prop}-right: 5px * $i !important;
     }
     .#{$shortcut}t#{$bp}-#{$i} {
-      #{$prop}-top: 5px * $i;
+      #{$prop}-top: 5px * $i !important;
     }
     .#{$shortcut}b#{$bp}-#{$i} {
-      #{$prop}-bottom: 5px * $i;
+      #{$prop}-bottom: 5px * $i !important;
     }
     .#{$shortcut}x#{$bp}-#{$i} {
-      #{$prop}-left: 5px * $i;
-      #{$prop}-right: 5px * $i;
+      #{$prop}-left: 5px * $i !important;
+      #{$prop}-right: 5px * $i !important;
     }
     .#{$shortcut}y#{$bp}-#{$i} {
-      #{$prop}-top: 5px * $i;
-      #{$prop}-bottom: 5px * $i;
+      #{$prop}-top: 5px * $i !important;
+      #{$prop}-bottom: 5px * $i !important;
     }
   }
 }
