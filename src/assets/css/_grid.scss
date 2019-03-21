@@ -17,24 +17,24 @@
 @mixin spacing($bp: '', $prop, $shortcut) {
   @for $i from 0 through 6 {
     .#{$shortcut}l#{$bp}-#{$i} {
-      #{$prop}-left: 5px * $i !important;
+      #{$prop}-left: 4px * ($i * 1.5) !important;
     }
     .#{$shortcut}r#{$bp}-#{$i} {
-      #{$prop}-right: 5px * $i !important;
+      #{$prop}-right: 4px * ($i * 1.5) !important;
     }
     .#{$shortcut}t#{$bp}-#{$i} {
-      #{$prop}-top: 5px * $i !important;
+      #{$prop}-top: 4px * ($i * 1.5) !important;
     }
     .#{$shortcut}b#{$bp}-#{$i} {
-      #{$prop}-bottom: 5px * $i !important;
+      #{$prop}-bottom: 4px * ($i * 1.5) !important;
     }
     .#{$shortcut}x#{$bp}-#{$i} {
-      #{$prop}-left: 5px * $i !important;
-      #{$prop}-right: 5px * $i !important;
+      #{$prop}-left: 4px * ($i * 1.5) !important;
+      #{$prop}-right: 4px * ($i * 1.5) !important;
     }
     .#{$shortcut}y#{$bp}-#{$i} {
-      #{$prop}-top: 5px * $i !important;
-      #{$prop}-bottom: 5px * $i !important;
+      #{$prop}-top: 4px * ($i * 1.5) !important;
+      #{$prop}-bottom: 4px * ($i * 2) !important;
     }
   }
 }
