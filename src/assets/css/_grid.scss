@@ -14,6 +14,31 @@
   }
 }
 
+@mixin spacing($bp: '', $prop, $shortcut) {
+  @for $i from 1 through 6 {
+    .#{$shortcut}l#{$bp}-#{$i} {
+      #{$prop}-left: 5px * $i;
+    }
+    .#{$shortcut}r#{$bp}-#{$i} {
+      #{$prop}-right: 5px * $i;
+    }
+    .#{$shortcut}t#{$bp}-#{$i} {
+      #{$prop}-top: 5px * $i;
+    }
+    .#{$shortcut}b#{$bp}-#{$i} {
+      #{$prop}-bottom: 5px * $i;
+    }
+    .#{$shortcut}x#{$bp}-#{$i} {
+      #{$prop}-left: 5px * $i;
+      #{$prop}-right: 5px * $i;
+    }
+    .#{$shortcut}y#{$bp}-#{$i} {
+      #{$prop}-top: 5px * $i;
+      #{$prop}-bottom: 5px * $i;
+    }
+  }
+}
+
 
 @mixin flex-prop($prop) {
   @each $value in center, space-around, space-between, flex-end {
@@ -42,29 +67,27 @@
   }
 }
 
-
-
-
-
-
-
-
-
 @include columns();
 @include displays();
+@include spacing('', margin, m);
+@include spacing('', padding, p);
 
 //media queries for the grid
 @media (min-width: $sm-breakpoint) {
   @include columns(-md);
   @include displays(-md);
+  @include spacing(-md, margin, m);
+  @include spacing(-md, padding, p);
 }
 
 @media (min-width: $md-breakpoint) {
   @include columns(-lg);
   @include displays(-lg);
+  @include spacing(-lg, padding, p);
 }
 
 @media (min-width: $lg-breakpoint) {
   @include columns(-xl);
   @include displays(-xl);
+  @include spacing(-xl, padding, p);
 }
