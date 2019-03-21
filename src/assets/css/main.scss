@@ -141,18 +141,35 @@
 
 .story{
   background: #1D2432;
-  // background: linear-gradient(to bottom right, #1D2432,rgb(71, 44, 41) );
   height: 300px;
-  // background-color: s
-
 }
-// .story::before {
-//   position: absolute;
-//   content: "";
-//   width: 100%;
-//   height: 10%;
-//   padding-top: 0;
-//   margin-top: 0;
-//   background-color: white;
-//   clip-path: polygon(100% 0, 0 0, 0 100%);
-// }
+
+.hero-section {
+  min-height: 550px;
+}
+
+.iron-man-info {
+  margin-top: -$diagonal-height;
+  background: url('https://images4.alphacoders.com/931/93124.jpg') no-repeat right top;
+  background-size: cover;
+}
+
+.black-panther-info {
+  background: url('https://images6.alphacoders.com/857/857752.png') no-repeat center top;
+  background-size: cover;
+}
+
+.thor-info {
+  background: url('https://images3.alphacoders.com/674/674048.jpg') no-repeat center top;
+  background-size: cover;
+}
+
+.black-widow-info {
+  background: url('https://images.alphacoders.com/303/303681.jpg') no-repeat center top;
+  background-size: cover;
+}
+
+.site-footer {
+  margin-top: 100px;
+  background-color: $default;
+}

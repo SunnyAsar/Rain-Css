@@ -9,8 +9,6 @@ $default : lightgray;
 $dark: black;
 $light: whitesmoke;
 
-
-
 $colors :(
   primary: $primary,
   secondary: $secondary,
@@ -23,12 +21,11 @@ $colors :(
   light: $light
 );
 
-
-
-
-
 // Breakpoints
 $sm-breakpoint: 600px;
 $md-breakpoint: 900px;
 $lg-breakpoint: 1200px;
 $xl-breakpoint: 1600px;
+
+// other variables
+$diagonal-height: 7vw; // this variable have to be in percentaje

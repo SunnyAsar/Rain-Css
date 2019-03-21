@@ -17,6 +17,12 @@
 }
 
 @each $name, $color in $colors {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+}
+
+@each $name, $color in $colors {
     .btn-#{$name} {
         background-color: $color;
         display: inline-block;
@@ -62,4 +68,28 @@
 
 .pointer {
     cursor: pointer;
+}
+
+.diagonal-right {
+    padding-bottom: $diagonal-height !important;
+    clip-path: polygon(0 calc(0% + #{$diagonal-height}),
+        100% 0,
+        100% 100%,
+        0 calc(100% - #{$diagonal-height}));
+    & + * {
+        margin-top: -$diagonal-height !important;
+        padding-top: $diagonal-height !important;
+    }
+}
+
+.diagonal-left {
+    padding-bottom: $diagonal-height !important;
+    clip-path: polygon(0 0,
+        100% calc(0% + #{$diagonal-height}),
+        100% calc(100% - #{$diagonal-height}),
+        0 100%);
+    & + * {
+        margin-top: -$diagonal-height !important;
+        padding-top: $diagonal-height !important;
+    }
 }
