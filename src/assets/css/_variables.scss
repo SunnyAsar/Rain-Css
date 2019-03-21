@@ -2,12 +2,14 @@
 $primary: blue;
 $secondary: teal;
 $success: green;
-$warning: orange;
-$danger : crimson;
-$info : skyblue;
+$warning: #857D27;
+$danger : #892931;
+$info : #3889C1;
 $default : lightgray;
 $dark: black;
 $light: whitesmoke;
+$gold: #D0AC52;
+
 
 $colors :(
   primary: $primary,
@@ -18,7 +20,8 @@ $colors :(
   danger: $danger,
   default: $default,
   dark: $dark,
-  light: $light
+  light: $light,
+  gold:$gold
 );
 
 // Breakpoints

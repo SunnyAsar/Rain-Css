@@ -145,7 +145,11 @@
 }
 
 .hero-section {
-  min-height: 550px;
+  height: 550px;
+  .super-hero {
+    text-shadow: 1px 1px 5px black,
+    -1px -1px 5px black;
+  }
 }
 
 .iron-man-info {
@@ -170,6 +174,6 @@
 }
 
 .site-footer {
-  margin-top: 100px;
+  // margin-top: 100px;
   background-color: $default;
 }
