@@ -20,21 +20,22 @@
       font-size: 3rem;
     }
 
-    ul li{
-      cursor: pointer;
-      padding: 10px;
-      border: 2px solid transparent;
-      transition:all .7s;
-      &:hover{
-        border-radius: 5%;
-        background: rgba($color: #474646, $alpha: .5);
-        border: 2px solid $light;
-        transform: translateY(-5px);
-      }
-    }
-
     @media (max-width: $sm-breakpoint) {
       margin-top: 10px;
+    }
+  }
+
+  .nav .nav-item {
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid transparent;
+    transition: all .7s;
+
+    &:hover {
+      border-radius: 5%;
+      background: rgba($color: #474646, $alpha: .5);
+      border: 2px solid $light;
+      transform: translateY(-5px);
     }
   }
 
@@ -113,19 +114,43 @@
       width: 100%;
       margin-bottom: 30px;
       .side {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, .8);
         backface-visibility: hidden;
         border-radius: 6px;
         height: 100%;
         position: absolute;
         overflow: hidden;
         width: 100%;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
       }
       .back {
-        background: url('https://i.pinimg.com/originals/c7/0a/43/c70a435e537ea495e340302356ed7172.jpg') no-repeat left bottom, rgba($color: #000000, $alpha: .5);
         color: $light;
         line-height: 250px;
         text-align: center;
         transform: rotateY(180deg);
+        &.black-panther {
+          background: url('https://www.vrandfun.com/wp-content/uploads/2018/06/marvel-powers-united-vr-black-panther.jpg') no-repeat center center;
+          background-size: cover;
+        }
+        &.iron-man {
+          background: url('https://static.comicvine.com/uploads/original/11122/111221607/4469894-2826175054-IronM.jpg') no-repeat center center;
+          background-size: cover;
+        }
+        &.black-widow {
+          background: url('https://cdn.vox-cdn.com/thumbor/CAUv8Mbou_rQE5hhkmsK_veYAbU=/0x0:1920x1080/1200x800/filters:focal(516x102:822x408)/cdn.vox-cdn.com/uploads/chorus_image/image/58289837/black_widow.0.jpg') no-repeat center center;
+          background-size: cover;
+        }
+        &.thor {
+          background: url('https://images.ctfassets.net/7h71s48744nc/60hxJjssnKaWuEUYyMwIw0/9c191da1ad6c3bf757bce2ba8c7e64b8/thor.jpg') no-repeat 80% center;
+          background-size: cover;
+        }
 
         .back-container {
           background-color: rgba($color: #000000, $alpha: .5);

@@ -7,7 +7,7 @@
 }
 
 @mixin displays ($bp: '') {
-  @each $value in flex, inline, inline-block, block, none {
+  @each $value in flex, inline-flex, inline, inline-block, block, none {
     .display#{$bp}-#{$value}{
       display: $value !important;
     }
