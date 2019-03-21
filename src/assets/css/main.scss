@@ -64,53 +64,77 @@
       padding: 0;
     }
   }
+  &::after {
+    content: '';
+    background: url('https://i.pinimg.com/originals/c7/0a/43/c70a435e537ea495e340302356ed7172.jpg') no-repeat left bottom;
+    background-size: cover;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
-.hero::after {
-  content: '';
-  background: url('https://i.pinimg.com/originals/c7/0a/43/c70a435e537ea495e340302356ed7172.jpg') no-repeat left bottom;
-  background-size: cover;
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+@keyframes jumping {
+  0% {
+    transform: translateY(0)
+  }
+
+  80% {
+    transform: translateY(0)
+  }
+
+  90% {
+    transform: translateY(-10px)
+  }
+
+  100% {
+    transform: translateY(0)
+  }
 }
 
+.heroes-cards {
+  .heroes-cards-title {
+    animation: jumping 3s ease-out infinite;
+  }
+  .card-container {
+    cursor: pointer;
+    height: 500px;
+    perspective: 800px;
+    position: relative;
+    width: 100%;
+    .card {
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: all 1s ease-in-out;
+      width: 100%;
+      margin-bottom: 30px;
+      .side {
+        backface-visibility: hidden;
+        border-radius: 6px;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+      }
+      .back {
+        background: url('https://i.pinimg.com/originals/c7/0a/43/c70a435e537ea495e340302356ed7172.jpg') no-repeat left bottom, rgba($color: #000000, $alpha: .5);
+        color: $light;
+        line-height: 250px;
+        text-align: center;
+        transform: rotateY(180deg);
 
-
-.card-container {
-  cursor: pointer;
-  height: 400px;
-  perspective: 600;
-  position: relative;
-  width: 100%;
-}
-.card {
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: all 1s ease-in-out;
-  width: 100%;
-  margin-bottom: 30px;
-}
-.card:hover {
-  transform: rotateY(180deg);
-}
-.card .side {
-  backface-visibility: hidden;
-  border-radius: 6px;
-  height: 100%;
-  position: absolute;
-  overflow: hidden;
-  width: 100%;
-}
-.card .back {
-  // background: #eaeaed;
-  background: url('https://i.pinimg.com/originals/c7/0a/43/c70a435e537ea495e340302356ed7172.jpg') no-repeat left bottom, rgba($color: #000000, $alpha: .5);;
-  color: $light;
-  line-height: 250px;
-  text-align: center;
-  transform: rotateY(180deg);
+        .back-container {
+          background-color: rgba($color: #000000, $alpha: .5);
+          height: 100%;
+        }
+      }
+    }
+    &:hover .card {
+      transform: rotateY(180deg);
+    }
+  }
 }
