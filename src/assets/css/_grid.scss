@@ -16,6 +16,9 @@
 
 @mixin spacing($bp: '', $prop, $shortcut) {
   @for $i from 0 through 6 {
+    .#{$shortcut}-#{$i} {
+      #{$prop}: 4px * ($i * 1.5) !important;
+    }
     .#{$shortcut}l#{$bp}-#{$i} {
       #{$prop}-left: 4px * ($i * 1.5) !important;
     }

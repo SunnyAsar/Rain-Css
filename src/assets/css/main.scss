@@ -39,6 +39,62 @@
     @media (max-width: $sm-breakpoint) {
       margin-top: 10px;
     }
+    .menu-button {
+      .hamburger-btn {
+        z-index: 10000;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        &::after,
+        &::before,
+        &>.bar {
+          content: "";
+          width: 30px;
+          height: 4px;
+          display: block;
+          margin: 2px;
+          background-color: $light;
+          border-radius: 1px;
+          transition: all .5s;
+        }
+      }
+      #nav-btn:checked {
+        & +.hamburger-btn::after {
+          transform: translateY(-150%) rotate(315deg);
+        }
+        & +.hamburger-btn::before {
+          transform: translateY(150%) rotate(-315deg);
+        }
+        & +.hamburger-btn>.bar {
+          transform: scale(0);
+          margin: 0;
+        }
+
+        & ~ .responsive-nav {
+          left: 0;
+        }
+      }
+      .responsive-nav {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 0;
+        left: 100%;
+        z-index: 9999;
+        background-color: rgba($color: #000000, $alpha: 0.9);
+        transition: all .5s;
+        .nav-item:first-child {
+          margin-top: 100px !important;
+        }
+      }
+    }
   }
 
   .hero-text {
