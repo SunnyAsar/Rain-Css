@@ -4,6 +4,22 @@
 @import './grid';
 @import './widgets';
 
+.nav {
+  flex-wrap: wrap;
+  .nav-item {
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid transparent;
+    transition: all .7s;
+
+    &:hover {
+      border-radius: 5%;
+      background: rgba($color: #474646, $alpha: .5);
+      border: 2px solid $light;
+      transform: translateY(-5px);
+    }
+  }
+}
 
 .hero {
   background-color: rgba($color: #000000, $alpha: .5);
@@ -22,20 +38,6 @@
 
     @media (max-width: $sm-breakpoint) {
       margin-top: 10px;
-    }
-  }
-
-  .nav .nav-item {
-    cursor: pointer;
-    padding: 10px;
-    border: 2px solid transparent;
-    transition: all .7s;
-
-    &:hover {
-      border-radius: 5%;
-      background: rgba($color: #474646, $alpha: .5);
-      border: 2px solid $light;
-      transform: translateY(-5px);
     }
   }
 
