@@ -63,6 +63,11 @@
         }
       }
       #nav-btn:checked {
+        & + .hamburger-btn {
+          position: fixed;
+          top: 40px;
+          right: 40px;
+        }
         & +.hamburger-btn::after {
           transform: translateY(-150%) rotate(315deg);
         }
