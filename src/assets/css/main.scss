@@ -1,3 +1,267 @@
-body{
-    background-color: teal
+@import './reset';
+@import './variables';
+@import './type';
+@import './grid';
+@import './widgets';
+
+.nav {
+  flex-wrap: wrap;
+  .nav-item {
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid transparent;
+    transition: all .7s;
+
+    &:hover {
+      border-radius: 5%;
+      background: rgba($color: #474646, $alpha: .5);
+      border: 2px solid $light;
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.hero {
+  background-color: rgba($color: #000000, $alpha: .5);
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .header {
+    font-weight: bold;
+    margin-top: 30px;
+
+    .logo {
+      font-size: 3rem;
+    }
+
+    @media (max-width: $sm-breakpoint) {
+      margin-top: 10px;
+    }
+    .menu-button {
+      .hamburger-btn {
+        z-index: 10000;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        &::after,
+        &::before,
+        &>.bar {
+          content: "";
+          width: 30px;
+          height: 4px;
+          display: block;
+          margin: 2px;
+          background-color: $light;
+          border-radius: 1px;
+          transition: all .5s;
+        }
+      }
+      #nav-btn:checked {
+        & + .hamburger-btn {
+          position: fixed;
+          top: 40px;
+          right: 40px;
+        }
+        & +.hamburger-btn::after {
+          transform: translateY(-150%) rotate(315deg);
+        }
+        & +.hamburger-btn::before {
+          transform: translateY(150%) rotate(-315deg);
+        }
+        & +.hamburger-btn>.bar {
+          transform: scale(0);
+          margin: 0;
+        }
+
+        & ~ .responsive-nav {
+          left: 0;
+        }
+      }
+      .responsive-nav {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 0;
+        left: 100%;
+        z-index: 9999;
+        background-color: rgba($color: #000000, $alpha: 0.9);
+        transition: all .5s;
+        .nav-item:first-child {
+          margin-top: 100px !important;
+        }
+      }
+    }
+  }
+
+  .hero-text {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    h1 {
+      margin-bottom: 10%;
+      font-family: 'Raleway', sans-serif;
+      .h3{
+        font-size: 30px;
+      }
+      .h2{
+        font-size: 50px;
+      }
+      .h1{
+        font-size: 80px;
+      }
+      @media (max-width: $sm-breakpoint) {
+        .h3 { font-size: 20px; }
+        .h2 { font-size: 30px; }
+        .h1 { font-size: 60px; }
+      }
+    }
+    @media (max-width: $sm-breakpoint) {
+      padding: 0;
+    }
+  }
+  &::after {
+    content: '';
+    background: url('https://i.pinimg.com/originals/c7/0a/43/c70a435e537ea495e340302356ed7172.jpg') no-repeat left bottom;
+    background-size: cover;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@keyframes jumping {
+  0% {
+    transform: translateY(0)
+  }
+
+  80% {
+    transform: translateY(0)
+  }
+
+  90% {
+    transform: translateY(-10px)
+  }
+
+  100% {
+    transform: translateY(0)
+  }
+}
+
+.heroes-cards {
+  .heroes-cards-title {
+    animation: jumping 3s ease-out infinite;
+  }
+  .card-container {
+    cursor: pointer;
+    height: 500px;
+    perspective: 800px;
+    position: relative;
+    width: 100%;
+    .card {
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: all 1s ease-in-out;
+      width: 100%;
+      margin-bottom: 30px;
+      .side {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, .8);
+        backface-visibility: hidden;
+        border-radius: 6px;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+      .back {
+        color: $light;
+        line-height: 250px;
+        text-align: center;
+        transform: rotateY(180deg);
+        &.black-panther {
+          background: url('https://www.vrandfun.com/wp-content/uploads/2018/06/marvel-powers-united-vr-black-panther.jpg') no-repeat center center;
+          background-size: cover;
+        }
+        &.iron-man {
+          background: url('https://static.comicvine.com/uploads/original/11122/111221607/4469894-2826175054-IronM.jpg') no-repeat center center;
+          background-size: cover;
+        }
+        &.black-widow {
+          background: url('https://cdn.vox-cdn.com/thumbor/CAUv8Mbou_rQE5hhkmsK_veYAbU=/0x0:1920x1080/1200x800/filters:focal(516x102:822x408)/cdn.vox-cdn.com/uploads/chorus_image/image/58289837/black_widow.0.jpg') no-repeat center center;
+          background-size: cover;
+        }
+        &.thor {
+          background: url('https://images.ctfassets.net/7h71s48744nc/60hxJjssnKaWuEUYyMwIw0/9c191da1ad6c3bf757bce2ba8c7e64b8/thor.jpg') no-repeat 80% center;
+          background-size: cover;
+        }
+
+        .back-container {
+          background-color: rgba($color: #000000, $alpha: .5);
+          height: 100%;
+        }
+      }
+    }
+    &:hover .card {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+.story{
+  background: #1D2432;
+  height: 300px;
+}
+
+.hero-section {
+  height: 550px;
+  .super-hero {
+    text-shadow: 1px 1px 5px black,
+    -1px -1px 5px black;
+  }
+}
+
+.iron-man-info {
+  margin-top: -$diagonal-height;
+  background: url('https://images4.alphacoders.com/931/93124.jpg') no-repeat right top;
+  background-size: cover;
+}
+
+.black-panther-info {
+  background: url('https://images6.alphacoders.com/857/857752.png') no-repeat center top;
+  background-size: cover;
+}
+
+.thor-info {
+  background: url('https://images3.alphacoders.com/674/674048.jpg') no-repeat center top;
+  background-size: cover;
+}
+
+.black-widow-info {
+  background: url('https://images.alphacoders.com/303/303681.jpg') no-repeat center top;
+  background-size: cover;
+}
+
+.site-footer {
+  // margin-top: 100px;
+  background-color: $default;
 }

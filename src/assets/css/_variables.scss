@@ -1,0 +1,34 @@
+// Colors
+$primary: blue;
+$secondary: teal;
+$success: green;
+$warning: #857D27;
+$danger : #892931;
+$info : #3889C1;
+$default : lightgray;
+$dark: black;
+$light: whitesmoke;
+$gold: #D0AC52;
+
+
+$colors :(
+  primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  warning: $warning,
+  info: $info,
+  danger: $danger,
+  default: $default,
+  dark: $dark,
+  light: $light,
+  gold:$gold
+);
+
+// Breakpoints
+$sm-breakpoint: 600px;
+$md-breakpoint: 900px;
+$lg-breakpoint: 1200px;
+$xl-breakpoint: 1600px;
+
+// other variables
+$diagonal-height: 7vw; // this variable have to be in percentaje
